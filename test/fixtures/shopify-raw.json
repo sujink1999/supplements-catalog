@@ -1,0 +1,133 @@
+[
+ {
+  "store": "aceblend.com",
+  "id": 9635244835074,
+  "handle": "bio-berberine-nac",
+  "url": "https://aceblend.com/products/bio-berberine-nac",
+  "title": "Bio Berberine + NAC",
+  "vendor": "Ace Blend",
+  "productType": "Super Essentials",
+  "tags": [
+   "exclude_fother_mug",
+   "New_Launch",
+   "no-acordian",
+   "no-ingreaidnt",
+   "Shop-all",
+   "user_guide_image"
+  ],
+  "bodyHtml": "<p><meta charset=\"utf-8\">Your metabolism is the master switch for long-term health. Our holistic formula blends high-absorption AbsorBerine™ and NAC to support healthier blood sugar levels, insulin sensitivity, energy efficiency, and cellular health. Rebuild your metabolic foundation with one intell",
+  "publishedAt": "2026-09-18T13:40:36+05:30",
+  "updatedAt": "2026-09-27T20:31:31+05:30",
+  "options": [
+   "Variant"
+  ],
+  "variants": [
+   {
+    "id": 48514247065858,
+    "title": "60 Capsules",
+    "sku": "AB_SE_BERNAC_60",
+    "price": "1499.00",
+    "compareAtPrice": "1799.00",
+    "available": true,
+    "grams": 250,
+    "url": "https://aceblend.com/products/bio-berberine-nac?variant=48514247065858"
+   },
+   {
+    "id": 48515277881602,
+    "title": "120 Capsules",
+    "sku": "AB_SE_BERNAC_120",
+    "price": "2878.00",
+    "compareAtPrice": "3598.00",
+    "available": true,
+    "grams": 500,
+    "url": "https://aceblend.com/products/bio-berberine-nac?variant=48515277881602"
+   }
+  ],
+  "images": [
+   {
+    "src": "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_1_11.png?v=1789724818",
+    "w": 1080,
+    "h": 1080
+   },
+   {
+    "src": "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_3_10.png?v=1790174371",
+    "w": 1080,
+    "h": 1080
+   }
+  ]
+ },
+ {
+  "store": "aceblend.com",
+  "id": 9381133549826,
+  "handle": "🎁-premium-plant-protein-intense-kulfi-starter-5",
+  "url": "https://aceblend.com/products/🎁-premium-plant-protein-intense-kulfi-starter-5",
+  "title": "🎁 Premium Plant Protein | Intense - Kulfi / Starter 5",
+  "vendor": "Ace Blend",
+  "productType": "",
+  "tags": [
+   "kwikcart-freebie"
+  ],
+  "bodyHtml": "",
+  "publishedAt": "2026-09-16T15:26:09+05:30",
+  "updatedAt": "2026-09-27T20:31:31+05:30",
+  "options": [
+   "Title"
+  ],
+  "variants": [
+   {
+    "id": 47752327921922,
+    "title": "Default Title",
+    "sku": "AB_P_IN_KL_5",
+    "price": "0.00",
+    "compareAtPrice": "700.00",
+    "available": true,
+    "grams": 0,
+    "url": "https://aceblend.com/products/🎁-premium-plant-protein-intense-kulfi-starter-5?variant=47752327921922"
+   }
+  ],
+  "images": [
+   {
+    "src": "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/9_3_1_74b773b7-a278-4475-9ab7-5f3acb39cbe8.jpg?v=1778439906",
+    "w": 1080,
+    "h": 1080
+   }
+  ]
+ },
+ {
+  "store": "aceblend.com",
+  "id": 9199493546242,
+  "handle": "🎁-premium-plant-protein-daily-raw-chocolate-starter-5",
+  "url": "https://aceblend.com/products/🎁-premium-plant-protein-daily-raw-chocolate-starter-5",
+  "title": "🎁 Premium Plant Protein | Daily - Raw Chocolate / Starter 5",
+  "vendor": "Ace Blend",
+  "productType": "",
+  "tags": [
+   "kwikcart-freebie"
+  ],
+  "bodyHtml": "",
+  "publishedAt": "2026-09-16T15:26:05+05:30",
+  "updatedAt": "2026-09-27T20:31:31+05:30",
+  "options": [
+   "Title"
+  ],
+  "variants": [
+   {
+    "id": 47018900128002,
+    "title": "Default Title",
+    "sku": "AB_P_DL_RC_5",
+    "price": "0.00",
+    "compareAtPrice": "575.00",
+    "available": true,
+    "grams": 0,
+    "url": "https://aceblend.com/products/🎁-premium-plant-protein-daily-raw-chocolate-starter-5?variant=47018900128002"
+   }
+  ],
+  "images": [
+   {
+    "src": "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_1_5_db68c8a1-2429-469e-ac7b-203b139edb78.jpg?v=1762652285",
+    "w": 1080,
+    "h": 1080
+   }
+  ]
+ }
+]

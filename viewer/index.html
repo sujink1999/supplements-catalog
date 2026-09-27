@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Supplements Catalog Viewer</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7f5;
+    --panel: #ffffff;
+    --border: #d8d8d4;
+    --text: #1a1a18;
+    --muted: #6b6b66;
+    --accent: #2f6f4f;
+    --accent-bg: #e7f2ec;
+    --row-hover: #eef1ee;
+    --row-selected: #dcebe1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17181a;
+      --panel: #1f2123;
+      --border: #35373a;
+      --text: #e8e8e6;
+      --muted: #9a9a96;
+      --accent: #6fbf94;
+      --accent-bg: #22332a;
+      --row-hover: #26282b;
+      --row-selected: #2b3d32;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+  }
+  .wrap { padding: 16px; max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 18px; margin: 0 0 12px; }
+  .loader {
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    background: var(--panel);
+  }
+  .loader input { margin-top: 8px; }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 12px 0;
+    padding: 10px 14px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .stats .stat { font-size: 13px; }
+  .stats .stat b { color: var(--accent); }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .toolbar input[type="text"] {
+    flex: 1 1 220px;
+    min-width: 160px;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--panel);
+    color: var(--text);
+  }
+  select, .toolbar label {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--panel);
+    color: var(--text);
+    font-size: 13px;
+  }
+  .toolbar label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+  .layout { display: flex; gap: 16px; align-items: flex-start; }
+  .list-col { flex: 1 1 55%; min-width: 0; }
+  .detail-col {
+    flex: 1 1 45%;
+    min-width: 0;
+    position: sticky;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+  }
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  thead th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+  }
+  tbody td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--row-hover); }
+  tbody tr.selected { background: var(--row-selected); }
+  .muted { color: var(--muted); }
+  .pager { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13px; }
+  .pager button {
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--panel);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .pager button:disabled { opacity: 0.4; cursor: default; }
+  .badge {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .detail {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .detail h2 { font-size: 16px; margin: 0 0 4px; }
+  .detail .sub { color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+  .detail h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    margin: 16px 0 6px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  .imgs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .imgs img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+  }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 13px; }
+  .kv div:nth-child(odd) { color: var(--muted); }
+  .ing-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .ing-table th, .ing-table td { padding: 4px 6px; border-bottom: 1px solid var(--border); text-align: left; }
+  .ing-table th { color: var(--muted); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    background: var(--accent-bg);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11.5px;
+  }
+  .empty { color: var(--muted); font-style: italic; }
+  a { color: var(--accent); }
+  @media (max-width: 900px) {
+    .layout { flex-direction: column; }
+    .detail-col { position: static; max-height: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Supplements Catalog Viewer</h1>
+
+  <div id="loader" class="loader">
+    Load a snapshot JSON file (e.g. <code>data/snapshots/catalog-v1.json</code>).
+    <div><input type="file" id="fileInput" accept="application/json,.json"></div>
+  </div>
+
+  <div id="app" hidden>
+    <div class="stats" id="stats"></div>
+
+    <div class="toolbar">
+      <input type="text" id="search" placeholder="Search brand, product name, ingredient…">
+      <select id="fBrand"><option value="">All brands</option></select>
+      <select id="fFormFactor"><option value="">All form factors</option></select>
+      <select id="fVerification"><option value="">All verification</option></select>
+      <select id="fSource"><option value="">All sources</option></select>
+      <select id="fFoodForm">
+        <option value="">Food form: any</option>
+        <option value="yes">Food form: yes</option>
+        <option value="no">Food form: no</option>
+      </select>
+      <label><input type="checkbox" id="fTesting"> Has testing mark</label>
+    </div>
+
+    <div class="layout">
+      <div class="list-col">
+        <table>
+          <thead>
+            <tr>
+              <th>Brand</th>
+              <th>Product</th>
+              <th>Form</th>
+              <th>Verification</th>
+              <th>Source</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="pager">
+          <button id="prevPage">Prev</button>
+          <span id="pageInfo"></span>
+          <button id="nextPage">Next</button>
+        </div>
+      </div>
+      <div class="detail-col">
+        <div class="detail" id="detail">
+          <p class="empty">Select a row to see details.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var PAGE_SIZE = 50;
+  var state = {
+    rows: [],
+    filtered: [],
+    page: 0,
+    selectedKey: null,
+  };
+
+  var el = {
+    fileInput: document.getElementById("fileInput"),
+    loader: document.getElementById("loader"),
+    app: document.getElementById("app"),
+    stats: document.getElementById("stats"),
+    search: document.getElementById("search"),
+    fBrand: document.getElementById("fBrand"),
+    fFormFactor: document.getElementById("fFormFactor"),
+    fVerification: document.getElementById("fVerification"),
+    fSource: document.getElementById("fSource"),
+    fFoodForm: document.getElementById("fFoodForm"),
+    fTesting: document.getElementById("fTesting"),
+    rows: document.getElementById("rows"),
+    prevPage: document.getElementById("prevPage"),
+    nextPage: document.getElementById("nextPage"),
+    pageInfo: document.getElementById("pageInfo"),
+    detail: document.getElementById("detail"),
+  };
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function fmtMoney(row) {
+    var min = firstNum(row.priceMin);
+    var max = firstNum(row.priceMax);
+    var cur = row.currency || "";
+    if (min == null && max == null) return "";
+    if (max != null && min != null && max !== min) return cur + " " + min + "–" + max;
+    return cur + " " + (min != null ? min : max);
+  }
+  function firstNum(v) { return typeof v === "number" ? v : null; }
+
+  function hasTestingMark(row) {
+    var pm = row.packMarks;
+    if (pm && Array.isArray(pm.testing) && pm.testing.length) return true;
+    if (Array.isArray(row.claimedTesting) && row.claimedTesting.length) return true;
+    if (row.claims && Array.isArray(row.claims.testing) && row.claims.testing.length) return true;
+    return false;
+  }
+
+  function claimsOf(row) {
+    if (row.claims && typeof row.claims === "object") return row.claims;
+    return {
+      testing: row.claimedTesting || [],
+      purity: row.claimedPurity || [],
+      facility: row.claimedFacility || [],
+      diet: row.claimedDiet || [],
+      ingredientLevel: row.ingredientLevelCertifications || [],
+      keywords: row.keywordClaims || [],
+    };
+  }
+
+  // ---------------------------------------------------------------------
+  // load
+  // ---------------------------------------------------------------------
+
+  el.fileInput.addEventListener("change", function (e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    el.loader.textContent = "";
+    el.loader.appendChild(document.createTextNode("Reading " + file.name + " (" + Math.round(file.size / 1e6) + " MB)…"));
+    var reader = new FileReader();
+    reader.onload = function () {
+      var raw;
+      try {
+        raw = JSON.parse(reader.result);
+      } catch (err) {
+        el.loader.textContent = "Could not parse JSON: " + err.message;
+        return;
+      }
+      var rows = Array.isArray(raw) ? raw
+        : (raw && Array.isArray(raw.products)) ? raw.products
+        : (raw && Array.isArray(raw.rows)) ? raw.rows
+        : (raw && typeof raw === "object") ? Object.values(raw)
+        : [];
+      if (!rows.length) {
+        el.loader.textContent = "No rows found in that file.";
+        return;
+      }
+      onLoaded(rows);
+    };
+    reader.onerror = function () {
+      el.loader.textContent = "Could not read file.";
+    };
+    reader.readAsText(file);
+  });
+
+  function onLoaded(rows) {
+    state.rows = rows;
+    state.page = 0;
+    state.selectedKey = null;
+    buildFilterOptions();
+    applyFilters();
+    renderStats();
+    el.loader.hidden = true;
+    el.app.hidden = false;
+  }
+
+  function buildFilterOptions() {
+    var brands = new Set(), forms = new Set(), verifs = new Set(), sources = new Set();
+    state.rows.forEach(function (r) {
+      if (r.brand) brands.add(r.brand);
+      if (r.formFactor) forms.add(r.formFactor);
+      if (r.verification) verifs.add(r.verification);
+      if (r.source) sources.add(r.source);
+    });
+    fillSelect(el.fBrand, brands, "All brands");
+    fillSelect(el.fFormFactor, forms, "All form factors");
+    fillSelect(el.fVerification, verifs, "All verification");
+    fillSelect(el.fSource, sources, "All sources");
+  }
+
+  function fillSelect(select, valuesSet, allLabel) {
+    var values = Array.from(valuesSet).sort(function (a, b) { return String(a).localeCompare(String(b)); });
+    select.innerHTML = "<option value=\"\">" + esc(allLabel) + "</option>" +
+      values.map(function (v) { return "<option value=\"" + esc(v) + "\">" + esc(v) + "</option>"; }).join("");
+  }
+
+  // ---------------------------------------------------------------------
+  // filtering
+  // ---------------------------------------------------------------------
+
+  var filterEls = [el.search, el.fBrand, el.fFormFactor, el.fVerification, el.fSource, el.fFoodForm, el.fTesting];
+  filterEls.forEach(function (node) {
+    node.addEventListener("input", function () { state.page = 0; applyFilters(); });
+    node.addEventListener("change", function () { state.page = 0; applyFilters(); });
+  });
+
+  function applyFilters() {
+    var q = el.search.value.trim().toLowerCase();
+    var brand = el.fBrand.value;
+    var formFactor = el.fFormFactor.value;
+    var verification = el.fVerification.value;
+    var source = el.fSource.value;
+    var foodForm = el.fFoodForm.value;
+    var testingOnly = el.fTesting.checked;
+
+    state.filtered = state.rows.filter(function (r) {
+      if (brand && r.brand !== brand) return false;
+      if (formFactor && r.formFactor !== formFactor) return false;
+      if (verification && r.verification !== verification) return false;
+      if (source && r.source !== source) return false;
+      if (foodForm === "yes" && r.isFoodForm !== true) return false;
+      if (foodForm === "no" && r.isFoodForm === true) return false;
+      if (testingOnly && !hasTestingMark(r)) return false;
+      if (q) {
+        var hay = [r.brand, r.productName, r.title].filter(Boolean).join(" ").toLowerCase();
+        var matched = hay.indexOf(q) !== -1;
+        if (!matched && Array.isArray(r.ingredients)) {
+          matched = r.ingredients.some(function (ing) {
+            return ing && ing.canonical && String(ing.canonical).toLowerCase().indexOf(q) !== -1;
+          });
+        }
+        if (!matched) return false;
+      }
+      return true;
+    });
+
+    renderRows();
+    renderStats();
+  }
+
+  // ---------------------------------------------------------------------
+  // stats
+  // ---------------------------------------------------------------------
+
+  function renderStats() {
+    var total = state.rows.length;
+    var shown = state.filtered.length;
+    var byVerif = {};
+    state.filtered.forEach(function (r) {
+      var v = r.verification || "(none)";
+      byVerif[v] = (byVerif[v] || 0) + 1;
+    });
+    var verifBits = Object.keys(byVerif).sort().map(function (k) {
+      return '<span class="stat">' + esc(k) + ": <b>" + byVerif[k] + "</b></span>";
+    }).join("");
+    el.stats.innerHTML =
+      '<span class="stat">Total rows: <b>' + total + '</b></span>' +
+      '<span class="stat">Matching filters: <b>' + shown + '</b></span>' +
+      verifBits;
+  }
+
+  // ---------------------------------------------------------------------
+  // list / pagination
+  // ---------------------------------------------------------------------
+
+  el.prevPage.addEventListener("click", function () {
+    if (state.page > 0) { state.page--; renderRows(); }
+  });
+  el.nextPage.addEventListener("click", function () {
+    var maxPage = Math.max(0, Math.ceil(state.filtered.length / PAGE_SIZE) - 1);
+    if (state.page < maxPage) { state.page++; renderRows(); }
+  });
+
+  function renderRows() {
+    var start = state.page * PAGE_SIZE;
+    var pageRows = state.filtered.slice(start, start + PAGE_SIZE);
+    el.rows.innerHTML = pageRows.map(function (r) {
+      var sel = r.key === state.selectedKey ? " selected" : "";
+      return '<tr class="row' + sel + '" data-key="' + esc(r.key) + '">' +
+        "<td>" + esc(r.brand || "") + "</td>" +
+        "<td>" + esc(r.productName || r.title || "") + "</td>" +
+        "<td>" + esc(r.formFactor || "") + "</td>" +
+        "<td>" + (r.verification ? '<span class="badge">' + esc(r.verification) + "</span>" : "") + "</td>" +
+        "<td>" + esc(r.source || "") + "</td>" +
+        "<td>" + esc(fmtMoney(r)) + "</td>" +
+        "</tr>";
+    }).join("") || '<tr><td colspan="6" class="empty">No products match these filters.</td></tr>';
+
+    Array.prototype.forEach.call(el.rows.querySelectorAll("tr[data-key]"), function (tr) {
+      tr.addEventListener("click", function () {
+        state.selectedKey = tr.getAttribute("data-key");
+        renderRows();
+        renderDetail(state.rows.find(function (r) { return r.key === state.selectedKey; }));
+      });
+    });
+
+    var totalPages = Math.max(1, Math.ceil(state.filtered.length / PAGE_SIZE));
+    el.pageInfo.textContent = "Page " + (state.page + 1) + " of " + totalPages +
+      " (" + state.filtered.length + " rows)";
+    el.prevPage.disabled = state.page <= 0;
+    el.nextPage.disabled = state.page >= totalPages - 1;
+  }
+
+  // ---------------------------------------------------------------------
+  // detail panel
+  // ---------------------------------------------------------------------
+
+  function renderDetail(row) {
+    if (!row) {
+      el.detail.innerHTML = '<p class="empty">Select a row to see details.</p>';
+      return;
+    }
+
+    var images = [];
+    if (row.imageUrl) images.push(row.imageUrl);
+    if (Array.isArray(row.labelImages)) images = images.concat(row.labelImages);
+
+    var claims = claimsOf(row);
+    var pm = row.packMarks || {};
+    var allergens = row.allergens || {};
+    var licences = row.fssaiLicences || row.fssaiLicenses || [];
+
+    var html = "";
+    html += "<h2>" + esc(row.brand || "") + " — " + esc(row.productName || row.title || "") + "</h2>";
+    html += '<div class="sub">' + esc(row.key) + "</div>";
+
+    html += '<div class="kv">' +
+      "<div>Source</div><div>" + esc(row.source || "") + (row.store ? " (" + esc(row.store) + ")" : "") + "</div>" +
+      "<div>Form factor</div><div>" + esc(row.formFactor || "") + "</div>" +
+      "<div>Food form</div><div>" + (row.isFoodForm ? "yes" : "no") + "</div>" +
+      "<div>Verification</div><div>" + esc(row.verification || "") + (row.confidence != null ? " (confidence " + row.confidence + ")" : "") + "</div>" +
+      "<div>Serving size</div><div>" + esc(row.servingSize || "") + "</div>" +
+      "<div>Net quantity</div><div>" + esc(row.netQuantity || "") + "</div>" +
+      "<div>Price</div><div>" + esc(fmtMoney(row) || "") + "</div>" +
+      "<div>Buy URL</div><div>" + (row.url ? '<a href="' + esc(row.url) + '" target="_blank" rel="noopener">' + esc(row.url) + "</a>" : "") + "</div>" +
+      "</div>";
+
+    html += "<h3>Images</h3>";
+    html += images.length
+      ? '<div class="imgs">' + images.map(function (src) {
+          return '<img src="' + esc(src) + '" loading="lazy" alt="">';
+        }).join("") + "</div>"
+      : '<p class="empty">No images.</p>';
+
+    html += "<h3>Ingredients (" + (Array.isArray(row.ingredients) ? row.ingredients.length : 0) + ")</h3>";
+    if (Array.isArray(row.ingredients) && row.ingredients.length) {
+      html += '<table class="ing-table"><thead><tr>' +
+        "<th>Printed name</th><th>Canonical</th><th>Amount</th><th>Unit</th><th>Role</th><th>Agreement</th>" +
+        "</tr></thead><tbody>";
+      row.ingredients.forEach(function (ing) {
+        var agreement = ing.legacy && ing.legacy.agreement != null ? ing.legacy.agreement : "";
+        html += "<tr>" +
+          "<td>" + esc(ing.printedName || "") + "</td>" +
+          "<td>" + esc(ing.canonical || "") + "</td>" +
+          "<td>" + esc(ing.amount != null ? ing.amount : "") + "</td>" +
+          "<td>" + esc(ing.unit || "") + "</td>" +
+          "<td>" + esc(ing.role || "") + "</td>" +
+          "<td>" + esc(agreement) + "</td>" +
+          "</tr>";
+      });
+      html += "</tbody></table>";
+    } else {
+      html += '<p class="empty">No ingredient rows.</p>';
+    }
+
+    html += "<h3>Claims</h3>" + renderClaims(claims);
+
+    html += "<h3>Pack marks</h3>" + renderChipGroups({
+      Testing: (pm.testing || []).map(function (t) { return t && t.mark ? t.mark : t; }),
+      Certification: pm.certification || [],
+      Diet: pm.diet || [],
+      Other: pm.other || [],
+    }, "illegible badges: " + (pm.illegibleBadgeCount != null ? pm.illegibleBadgeCount : (pm.illegibleBadges != null ? pm.illegibleBadges : 0)));
+
+    html += "<h3>Allergens</h3>" + renderChipGroups({
+      Contains: allergens.contains || [],
+      "May contain traces": allergens.mayContainTraces || [],
+      "Free from": allergens.freeFrom || [],
+    }, allergens.statement ? "Statement: " + esc(allergens.statement) : "");
+
+    html += "<h3>FSSAI licences</h3>";
+    html += licences.length
+      ? '<div class="chips">' + licences.map(function (l) {
+          return '<span class="chip">' + esc(l.number || l) + (l.role ? " (" + esc(l.role) + ")" : "") + "</span>";
+        }).join("") + "</div>"
+      : '<p class="empty">None.</p>';
+
+    if (row.notes) {
+      html += "<h3>Notes</h3><p>" + esc(row.notes) + "</p>";
+    }
+
+    el.detail.innerHTML = html;
+  }
+
+  function renderClaims(claims) {
+    var groups = {
+      Testing: claims.testing || [],
+      Purity: claims.purity || [],
+      Facility: claims.facility || [],
+      Diet: claims.diet || [],
+      "Ingredient-level": claims.ingredientLevel || [],
+      Keywords: claims.keywords || [],
+    };
+    return renderChipGroups(groups, "");
+  }
+
+  function renderChipGroups(groups, footnote) {
+    var any = false;
+    var html = "";
+    Object.keys(groups).forEach(function (label) {
+      var list = groups[label];
+      if (!Array.isArray(list) || !list.length) return;
+      any = true;
+      html += '<div style="margin-bottom:6px"><div class="muted" style="font-size:11.5px;margin-bottom:3px">' + esc(label) + '</div>' +
+        '<div class="chips">' + list.map(function (v) {
+          return '<span class="chip">' + esc(typeof v === "string" ? v : JSON.stringify(v)) + "</span>";
+        }).join("") + "</div></div>";
+    });
+    if (!any) html = '<p class="empty">None.</p>';
+    if (footnote) html += '<div class="muted" style="font-size:11.5px;margin-top:4px">' + footnote + "</div>";
+    return html;
+  }
+})();
+</script>
+</body>
+</html>

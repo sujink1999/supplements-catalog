@@ -1,0 +1,19 @@
+{
+  "name": "supplements-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pipeline that builds a catalog of buyable Indian supplement products (ingredients, doses, price, pack marks) for os-backend to recommend from.",
+  "engines": { "node": ">=20" },
+  "bin": { "catalog": "bin/catalog.js" },
+  "scripts": {
+    "catalog": "node bin/catalog.js",
+    "import-legacy": "node bin/import-legacy.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0",
+    "sharp": "^0.33.4"
+  }
+}

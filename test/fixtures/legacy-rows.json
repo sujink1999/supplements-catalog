@@ -1,0 +1,752 @@
+[
+ {
+  "key": "aceblend.com__7839305269506",
+  "store": "aceblend.com",
+  "id": 7839305269506,
+  "url": "https://aceblend.com/products/mix-of-4",
+  "title": "Daily Mix of 4",
+  "vendor": "Ace Blend",
+  "brand": "Ace Blend",
+  "brandRaw": "Ace Blend",
+  "productName": "Daily Mix of 4",
+  "productType": "Premium Plant Protein",
+  "tags": [
+   "Best_Deals",
+   "exclude_aceblendor",
+   "no-acordian",
+   "no-pack",
+   "Shop-all"
+  ],
+  "pack": "single",
+  "formFactor": "sachet",
+  "servingSize": "1 Sachet (34g)",
+  "servingsPerContainer": 5,
+  "netQuantity": "170g",
+  "netQuantityNote": "34g x 5Nos",
+  "unitsInContainer": 5,
+  "doseDirections": "Up to 2 sachets per day. Do not exceed the recommended daily usage.",
+  "priceMin": 345,
+  "priceMax": 345,
+  "priceSource": "store",
+  "amazonOffer": null,
+  "rating": null,
+  "reviewCount": null,
+  "reviewsSummary": null,
+  "currency": "INR",
+  "variants": [
+   {
+    "id": 43315190825218,
+    "title": "Default Title",
+    "price": 345,
+    "url": "https://aceblend.com/products/mix-of-4?variant=43315190825218"
+   }
+  ],
+  "imageUrl": "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/Daily_PO4_Packof4.jpg?v=1779348564",
+  "labelImages": [
+   "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_2_e098620b-d5d9-4dbc-9667-7c9860c9b9f7.jpg?v=1770010744"
+  ],
+  "isFoodForm": false,
+  "ingredients": [
+   {
+    "role": "macro",
+    "printedName": "Energy (Kcal)",
+    "canonical": "energy",
+    "amount": 127.57,
+    "unit": "kcal",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "pack",
+    "packOverridden": [
+     "113.21 kcal",
+     "120.57 kcal"
+    ]
+   },
+   {
+    "role": "macro",
+    "printedName": "Total Fat (g)",
+    "canonical": "total fat",
+    "amount": 2.13,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   },
+   {
+    "role": "macro",
+    "printedName": "Saturated Fat (g)",
+    "canonical": "saturated fat",
+    "amount": 1.31,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   },
+   {
+    "role": "macro",
+    "printedName": "Trans Fat (g)",
+    "canonical": "trans fat",
+    "amount": 0.1,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   },
+   {
+    "role": "macro",
+    "printedName": "Cholesterol (mg)",
+    "canonical": "cholesterol",
+    "amount": 1,
+    "unit": "mg",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   },
+   {
+    "role": "macro",
+    "printedName": "Carbohydrates (g)",
+    "canonical": "carbohydrates",
+    "amount": 8.67,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   },
+   {
+    "role": "macro",
+    "printedName": "Total Sugar (g)",
+    "canonical": "total sugar",
+    "amount": 2.52,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   },
+   {
+    "role": "macro",
+    "printedName": "Added Sugar (g)",
+    "canonical": "added sugar",
+    "amount": 0,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image",
+    "agreement": "2/2"
+   }
+  ],
+  "confidence": 0.91,
+  "verification": "label_read",
+  "notes": "The first pack photo is the green lemonade physical pack and is used as the source of truth; the second rendered spec graphic is for Vanilla and differs on nutritional lines. Disagreements (pack photo vs graphic): serving size 34g vs 32g; energy 127.57 vs 113.21 kcal; total fat 2.13 vs 1.93g; saturated fat 1.31 vs 1.23g; trans fat <0.1 vs <0.1g (same displayed threshold); cholesterol <1.0 vs <1.0mg (same); carbohydrates 8.67 vs 7.36g; total sugar 2.52 vs 2.11g; dietary fibre 4.62 vs 4.76g; sodium 639.20 vs 438.4mg; potassium 48.16 vs 45.7mg; calcium 45.56 vs 52.26mg. Protein, added sugar, plant ingredients, antioxidants, probiotics, and amino-acid profile agree where readable. Pack-photo values used. Net quantity and five sachets are printed on the pack. Ingredient list gives plant protein blend components (pea protein isolate and brown rice protein isolate) but does not print an individual protein-source amount, so the 20g protein quantity is attributed generically to plant protein based on product positioning. Pack's tiny table rounds/prints <0.1 and <1.0; numerical amounts are represented as their thresholds because schema has no comparator field. Proprietary blend components and total blend weights are not quantified; probiotic blend lists each organism separately at 0.8B CFU, with no blend total. Ingredients panel mentions natural flavour (lemon), acidity regulator (INS 330), black sea salt, natural colour (INS 141), vital greens (amla juice extract, chlorella powder, KSM-66), antioxidants (curcumin, green tea extract, grape seed extract, lycopene), stabilizers (INS 415, INS 412, INS 414), probiotic blend, stevia extract, and sweetener; excipient components lack per-serving amounts.",
+  "claimedTesting": [],
+  "claimedPurity": [],
+  "claimedFacility": [],
+  "claimedDiet": [],
+  "ingredientLevelCertifications": [],
+  "packTestingMarks": [
+   {
+    "mark": "LAB TESTED, ALLERGEN FREE",
+    "kind": "third_party_lab"
+   },
+   {
+    "mark": "PESTICIDE-FREE",
+    "kind": "pesticide"
+   },
+   {
+    "mark": "HEAVY METALS TESTED",
+    "kind": "heavy_metals"
+   }
+  ],
+  "packCertificationMarks": [
+   "FDA REGISTERED",
+   "FSSAI",
+   "HYPoALLERGENIC",
+   "GLUTEN & SOY FREE"
+  ],
+  "packDietMarks": [
+   "vegetarian_green_dot",
+   "gluten_free",
+   "vegan",
+   "sugar_free"
+  ],
+  "allergens": {
+   "contains": [],
+   "mayContainTraces": [],
+   "freeFrom": [
+    "Allergen Free",
+    "Gluten & Soy Free",
+    "Dairy Free"
+   ],
+   "statement": null
+  },
+  "fssaiLicences": [
+   {
+    "number": "10019022009084",
+    "role": "manufactured_by"
+   },
+   {
+    "number": "1152298001309",
+    "role": "marketed_by"
+   }
+  ],
+  "illegibleBadges": 0,
+  "certificationsRead": {
+   "text": false,
+   "pack": true
+  },
+  "keywordClaims": [],
+  "factsSource": "store",
+  "factsSourceUrl": "https://aceblend.com/products/mix-of-4",
+  "factsLabelImages": [
+   "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_2_e098620b-d5d9-4dbc-9667-7c9860c9b9f7.jpg?v=1770010744",
+   "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_10_3f6e3737-03ab-43d3-887f-6c38e2262480.png?v=1770010744"
+  ],
+  "descriptionText": "A curated mix of our downright delicious protein flavours for you to experience before you pick larger supplies of your favourites. Supercharged with 20g of premium plant protein, 3 vital greens, 4 an",
+  "extractedAt": "2026-09-27T15:27:08.252Z",
+  "model": "gpt-6-luna",
+  "sources": [
+   "shopify"
+  ],
+  "offers": [
+   {
+    "source": "shopify",
+    "store": "aceblend.com",
+    "url": "https://aceblend.com/products/mix-of-4",
+    "price": 345,
+    "priceMax": 345,
+    "listPrice": null,
+    "inStock": true,
+    "variants": [
+     {
+      "id": 43315190825218,
+      "title": "Default Title",
+      "price": 345,
+      "url": "https://aceblend.com/products/mix-of-4?variant=43315190825218"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "amazon.in__B00KDFRUGY",
+  "source": "amazon",
+  "store": "amazon.in",
+  "id": "B00KDFRUGY",
+  "asin": "B00KDFRUGY",
+  "url": "https://www.amazon.in/dp/B00KDFRUGY",
+  "title": "MuscleBlaze MB-Vite Daily Multivitamin, 60 Tablets",
+  "brand": "MuscleBlaze",
+  "brandRaw": "MuscleBlaze",
+  "productName": "MB-Vite Daily Multivitamin",
+  "productType": "vitamin e,copper,folic acid,zinc,multivitamin,vitamin a,vitamin c,iron,vitamin d",
+  "tags": [],
+  "pack": "single",
+  "formFactor": "tablet",
+  "servingSize": "One Tablet (1.35 g)",
+  "servingsPerContainer": 60,
+  "netQuantity": "60 Units of Tablets",
+  "unitsInContainer": 60,
+  "doseDirections": "One Tablet daily or as suggested by your dietitian. Duration of Usage: Consume at your own discretion or as per labelled recommended usage.",
+  "priceMin": 579,
+  "priceMax": 579,
+  "listPrice": 649,
+  "currency": "INR",
+  "inStock": true,
+  "variants": [
+   {
+    "id": "B00KDFRUGY",
+    "title": "60 Count",
+    "price": 579,
+    "url": "https://www.amazon.in/dp/B00KDFRUGY"
+   }
+  ],
+  "imageUrl": "https://m.media-amazon.com/images/I/61CVm4xU1SL._SL1500_.jpg",
+  "labelImages": [
+   "https://m.media-amazon.com/images/I/81GyG9g1tZL._SL1500_.jpg"
+  ],
+  "ingredients": [
+   {
+    "role": "active",
+    "printedName": "Vitamin A (Retinyl Acetate)",
+    "canonical": "vitamin A",
+    "amount": 840,
+    "unit": "mcg",
+    "amountBasis": "unknown",
+    "form": "retinyl acetate",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Vitamin B1 (Thiamine Mononitrate)",
+    "canonical": "vitamin B1",
+    "amount": 1.4,
+    "unit": "mg",
+    "amountBasis": "unknown",
+    "form": "thiamine mononitrate",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Vitamin B2 (Riboflavin)",
+    "canonical": "vitamin B2",
+    "amount": 1.9,
+    "unit": "mg",
+    "amountBasis": "unknown",
+    "form": "riboflavin",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Vitamin B3 (Nicotinamide)",
+    "canonical": "vitamin B3",
+    "amount": 11,
+    "unit": "mg",
+    "amountBasis": "unknown",
+    "form": "nicotinamide",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Vitamin B5 (Calcium D-pantothenate)",
+    "canonical": "vitamin B5",
+    "amount": 5,
+    "unit": "mg",
+    "amountBasis": "unknown",
+    "form": "calcium D-pantothenate",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Vitamin B6 (Pyridoxine Hydrochloride)",
+    "canonical": "vitamin B6",
+    "amount": 1.9,
+    "unit": "mg",
+    "amountBasis": "unknown",
+    "form": "pyridoxine hydrochloride",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Biotin (D-Biotin)",
+    "canonical": "biotin",
+    "amount": 40,
+    "unit": "mcg",
+    "amountBasis": "unknown",
+    "form": "D-biotin",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   },
+   {
+    "role": "active",
+    "printedName": "Folic acid (n-pteroyl-L-glutamic Acid)",
+    "canonical": "folic acid",
+    "amount": 129.4,
+    "unit": "mcg",
+    "amountBasis": "unknown",
+    "form": "n-pteroyl-L-glutamic acid",
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "label_image"
+   }
+  ],
+  "ingredientsDeclared": "Diluent [INS 460 Ii Dicalcium Phosphate, BCAA L-isoleucine, L-valine, L-ascorbic Acid, Disintegrant (INS 468], Potassium Chloride, Binding Agents (INS 1202 & Maize Starch], Artificial Colors [INS 171 & INS 172 Ginseng (Pox ginseng) Root Extract, Disintegrant (Sodium Starch Glycolate), Magnesium Oxide, L-glutamine, Coating Agents (INS 462 & INS 464), Ferrous Fumarate, Pre & Pro biotic Blend",
+  "rating": 4.1,
+  "reviewCount": 10898,
+  "starsBreakdown": {
+   "5star": 0.54,
+   "4star": 0.25,
+   "3star": 0.12,
+   "2star": 0.03,
+   "1star": 0.06
+  },
+  "reviewsSummary": "Customers find this multivitamin to be a high-quality supplement that boosts immunity and provides full-day energy, with one customer noting its effectiveness in workout and overall health. Moreover, the product receives positive feedback for its authenticity, with customers confirming it's 95% original. However, experiences with side effects are mixed, with some reporting no side effects while others experience stomach upset and severe constipation. Additionally, opinions on value for money are divided, with some finding it good for the price while others consider it overpriced.",
+  "reviewKeywords": [
+   {
+    "name": "Quality",
+    "sentiment": "positive"
+   },
+   {
+    "name": "Effectiveness",
+    "sentiment": "positive"
+   },
+   {
+    "name": "Authenticity",
+    "sentiment": "positive"
+   },
+   {
+    "name": "Health benefits",
+    "sentiment": "positive"
+   },
+   {
+    "name": "Energy",
+    "sentiment": "positive"
+   },
+   {
+    "name": "Value for money",
+    "sentiment": "mixed"
+   },
+   {
+    "name": "Side effects",
+    "sentiment": "mixed"
+   },
+   {
+    "name": "Non-pertinence",
+    "sentiment": "negative"
+   }
+  ],
+  "reviewsLink": "https://www.amazon.in/product-reviews/B00KDFRUGY",
+  "bestsellerRank": {
+   "rank": 667,
+   "category": "Health & Personal Care",
+   "url": "https://www.amazon.in/gp/bestsellers/hpc/ref=pd_zg_ts_hpc"
+  },
+  "monthlyPurchaseVolume": "2K+ bought in past month",
+  "seller": "Bright Lifecare Private Limited",
+  "dietType": "Vegetarian",
+  "countryOfOrigin": "India",
+  "claimedTesting": [],
+  "claimedPurity": [],
+  "claimedFacility": [],
+  "claimedDiet": [],
+  "ingredientLevelCertifications": [],
+  "packTestingMarks": [],
+  "packCertificationMarks": [],
+  "packDietMarks": [
+   "vegetarian_green_dot"
+  ],
+  "allergens": {
+   "contains": [],
+   "mayContainTraces": [],
+   "freeFrom": [],
+   "statement": null
+  },
+  "fssaiLicences": [],
+  "illegibleBadges": 0,
+  "certificationsRead": {
+   "text": false,
+   "pack": true
+  },
+  "keywordClaims": [],
+  "isFoodForm": false,
+  "confidence": 0.88,
+  "verification": "label_read",
+  "notes": "Label photo is source. Serving is 1 tablet (1.35 g), 60 servings; net quantity 60 Units of Tablets. Label prints the amino acid, antioxidant, prebiotic/probiotic, enzyme, and metabolism blend members and individual amounts where shown, but no blend-total amounts; blendTotalMg is therefore null. The label names the probiotic species as a combined line with total 1 Billion CFU; no individual CFU amounts are printed. Ingredient list includes additional material not itemized with amounts in the composition table; no amounts were inferred. Some INS excipient identities are retained generically where the label provides only an INS code. Elemental quantities for listed minerals are interpreted from nutrient-name convention; ambiguity is possible.",
+  "descriptionText": "Product Description MuscleBlaze MB-Vite Daily Multivitamin: for Everlasting Energy & Strength! MuscleBlaze MB-Vite Daily Multivitamin just got better and stronger with the same quality premium ingredi",
+  "extractedAt": "2026-09-27T15:27:09.089Z",
+  "model": "gpt-6-luna",
+  "sources": [
+   "amazon"
+  ],
+  "offers": [
+   {
+    "source": "amazon",
+    "store": "amazon.in",
+    "url": "https://www.amazon.in/dp/B00KDFRUGY",
+    "price": 579,
+    "priceMax": 579,
+    "listPrice": 649,
+    "inStock": true,
+    "variants": [
+     {
+      "id": "B00KDFRUGY",
+      "title": "60 Count",
+      "price": 579,
+      "url": "https://www.amazon.in/dp/B00KDFRUGY"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "aceblend.com__9333785395458",
+  "store": "aceblend.com",
+  "id": 9333785395458,
+  "url": "https://aceblend.com/products/🎁-premium-plant-protein-daily-vanilla-starter-5",
+  "title": "🎁 Premium Plant Protein | Daily - Vanilla / Starter 5",
+  "vendor": "Ace Blend",
+  "brand": "Ace Blend",
+  "brandRaw": "Ace Blend",
+  "productName": "Premium Plant Protein Daily - Vanilla / Starter 5",
+  "productType": null,
+  "tags": [
+   "kwikcart-freebie"
+  ],
+  "pack": "single",
+  "formFactor": "powder",
+  "servingSize": null,
+  "servingsPerContainer": null,
+  "netQuantity": null,
+  "netQuantityNote": null,
+  "unitsInContainer": null,
+  "doseDirections": null,
+  "priceMin": 288,
+  "priceMax": 288,
+  "priceSource": "amazon",
+  "amazonOffer": {
+   "asin": "B0FH9MM7TN",
+   "url": "https://www.amazon.in/dp/B0FH9MM7TN",
+   "price": 288,
+   "listPrice": 575,
+   "inStock": true
+  },
+  "rating": 4,
+  "reviewCount": 76,
+  "reviewsSummary": "Customers find this protein powder offers unparalleled quality, contains incredible ingredients, and is easy to digest without bloating. Moreover, the product blends well and customers consider it good value for money, with one customer noting it mixes easily in a shaker without lumps. However, opinions on taste are mixed, with some finding it great while others describe it as terrible.",
+  "currency": "INR",
+  "variants": [
+   {
+    "id": 47578423460098,
+    "title": "Default Title",
+    "price": 0,
+    "url": "https://aceblend.com/products/🎁-premium-plant-protein-daily-vanilla-starter-5?variant=47578423460098"
+   }
+  ],
+  "imageUrl": "https://cdn.shopify.com/s/files/1/0656/3335/3986/files/PDP_1_fe491316-a910-4a24-acf0-2c71479cf14f.jpg?v=1774434803",
+  "labelImages": [],
+  "isFoodForm": false,
+  "ingredients": [],
+  "confidence": 0.2,
+  "verification": "unverified_title_only",
+  "notes": "No label photo or listing description text was provided; only the title is available, so supplement facts, serving size, and container quantity cannot be verified. Plant protein is suggested by the product title, but no amount is printed.",
+  "claimedTesting": [],
+  "claimedPurity": [],
+  "claimedFacility": [],
+  "claimedDiet": [],
+  "ingredientLevelCertifications": [],
+  "packTestingMarks": [
+   {
+    "mark": "Clinically Proven (KSM-66 Ashwagandha)",
+    "kind": "other"
+   }
+  ],
+  "packCertificationMarks": [],
+  "packDietMarks": [
+   "vegetarian_green_dot",
+   "gluten_free"
+  ],
+  "allergens": {
+   "contains": [],
+   "mayContainTraces": [],
+   "freeFrom": [
+    "dairy"
+   ],
+   "statement": null
+  },
+  "fssaiLicences": [],
+  "illegibleBadges": 0,
+  "certificationsRead": {
+   "text": false,
+   "pack": true
+  },
+  "keywordClaims": [],
+  "factsSource": "store",
+  "factsSourceUrl": "https://aceblend.com/products/🎁-premium-plant-protein-daily-vanilla-starter-5",
+  "factsLabelImages": [],
+  "descriptionText": "",
+  "extractedAt": "2026-09-27T15:27:08.258Z",
+  "model": "gpt-6-luna",
+  "sources": [
+   "shopify"
+  ],
+  "offers": [
+   {
+    "source": "shopify",
+    "store": "aceblend.com",
+    "url": "https://aceblend.com/products/🎁-premium-plant-protein-daily-vanilla-starter-5",
+    "price": 288,
+    "priceMax": 288,
+    "listPrice": null,
+    "inStock": true,
+    "variants": [
+     {
+      "id": 47578423460098,
+      "title": "Default Title",
+      "price": 0,
+      "url": "https://aceblend.com/products/🎁-premium-plant-protein-daily-vanilla-starter-5?variant=47578423460098"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "key": "maxprotein.in__5977144000666",
+  "store": "maxprotein.in",
+  "id": 5977144000666,
+  "url": "https://maxprotein.in/products/max-protein-daily-variety-bars-pack-of-6",
+  "title": "Max Protein Bar - Daily Variety Bars - Pack of 6",
+  "vendor": "RiteBite Max Protein",
+  "brand": "Max Protein",
+  "brandRaw": "RiteBite Max Protein",
+  "productName": "Max Protein Bar - Daily Variety Bars",
+  "productType": "Daily",
+  "tags": [
+   "Daily 10g protein",
+   "Daily 10gm protein",
+   "Max Protein Daily (10g)",
+   "Max Protein Daily 10gm",
+   "midnight cravings",
+   "Pack Of 6",
+   "Pre/post",
+   "Protein Bars",
+   "RS 351.00 - RS 400.00"
+  ],
+  "pack": "single",
+  "formFactor": "bar",
+  "servingSize": null,
+  "servingsPerContainer": null,
+  "netQuantity": "Pack of 6",
+  "netQuantityNote": null,
+  "unitsInContainer": 6,
+  "doseDirections": null,
+  "priceMin": null,
+  "priceMax": null,
+  "priceSource": null,
+  "amazonOffer": null,
+  "rating": null,
+  "reviewCount": null,
+  "reviewsSummary": null,
+  "currency": "INR",
+  "variants": [],
+  "imageUrl": "https://cdn.shopify.com/s/files/1/0512/8827/7146/products/Assorted---53-varients.png?v=1677503172",
+  "labelImages": [],
+  "isFoodForm": true,
+  "ingredients": [
+   {
+    "role": "active",
+    "printedName": "Protein",
+    "canonical": "protein",
+    "amount": 10,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "description",
+    "agreement": "1/1"
+   },
+   {
+    "role": "macro",
+    "printedName": "Dietary Fibre",
+    "canonical": "dietary fibre",
+    "amount": 4,
+    "unit": "g",
+    "amountBasis": "unknown",
+    "form": null,
+    "standardization": null,
+    "isPartOfBlend": false,
+    "blendName": null,
+    "blendTotalMg": null,
+    "source": "description",
+    "agreement": "1/1"
+   }
+  ],
+  "confidence": 0.36,
+  "verification": "unverified_no_label",
+  "notes": "No label photo was provided. Description gives protein as 10 g and dietary fibre as 4 g for Choco Classic; Choco Almond and Choco Berry are each described as having 5 g dietary fibre. Since this is a variety pack, the specific variant/serving corresponding to the facts is unclear. Serving size, vitamins and minerals quantities, other nutrition facts, and exact net quantity are not stated; pack of 6 is listing title information.",
+  "claimedTesting": [],
+  "claimedPurity": [],
+  "claimedFacility": [],
+  "claimedDiet": [],
+  "ingredientLevelCertifications": [],
+  "packTestingMarks": [],
+  "packCertificationMarks": [],
+  "packDietMarks": [],
+  "allergens": null,
+  "fssaiLicences": [],
+  "illegibleBadges": null,
+  "certificationsRead": {
+   "text": false,
+   "pack": false
+  },
+  "keywordClaims": [],
+  "factsSource": "store",
+  "factsSourceUrl": "https://maxprotein.in/products/max-protein-daily-variety-bars-pack-of-6",
+  "factsLabelImages": [],
+  "descriptionText": "RiteBite Max Protein Daily Choco Classic, Choco Almond, and Choco Berry Bars are convenient snack bars available in chocolate, almond, and berry variants. RiteBite Max Protein Daily Choco Classic Bar ",
+  "extractedAt": "2026-09-27T15:27:08.733Z",
+  "model": "gpt-6-luna",
+  "sources": [
+   "shopify"
+  ],
+  "offers": [
+   {
+    "source": "shopify",
+    "store": "maxprotein.in",
+    "url": "https://maxprotein.in/products/max-protein-daily-variety-bars-pack-of-6",
+    "price": null,
+    "priceMax": null,
+    "listPrice": null,
+    "inStock": null,
+    "variants": []
+   }
+  ]
+ }
+]
